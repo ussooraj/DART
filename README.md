@@ -4,7 +4,7 @@
 
 ## **Key Features**
 
-* **Fully Configurable:** The `config.yaml` file provides granular control over the entire generation pipeline.  
+* **Fully Configurable:** The **[config.yaml](./config.yaml)** file provides granular control over the entire generation pipeline.  
 * **Dynamic Background Sizing:** Crops or tiles backgrounds to perfectly match the text dimensions, preventing image distortion.  
 * **Context-Aware Text Sampling:** Generates text snippets by selecting adjacent words from the corpus to maintain semantic context.  
 * **Rich Augmentation Pipeline:** Applies a chain of realistic, randomized augmentations to simulate real-world conditions:  
@@ -51,20 +51,22 @@ Before running the script, you must populate the asset folders:
 * **/backgrounds/**: Place your background images (.png, .jpg) here.  
 * **/fonts/**: Place your font files (.ttf, .otf) here.
 
-*To use custom asset locations, simply edit the directory paths in `config.yaml`*
+*To use custom asset locations, simply edit the directory paths in **[config.yaml](./config.yaml)***
 
 ## **Usage**
 
 1. **Edit config.yaml**: Open the configuration file and adjust the parameters to fit your desired dataset specifications.  
 2. **Run the Generator**: Execute the main script from your terminal.
 
-`python main.py`
+```
+python main.py
+```
 
 The script will ask you to confirm the number of images to generate, and wait for your final confirmation before starting the process.
 
 ## **Configuration**
 
-All pipeline parameters are controlled via config.yaml.
+All pipeline parameters are controlled via **[config.yaml](./config.yaml)**.
 
 | Section | Parameter | Description |
 | :---- | :---- | :---- |
@@ -91,8 +93,6 @@ output/
 
 #### **labels.csv File**
 
-This is the master file that indexes your entire dataset.
-
 | Column | Description |
 | :---- | :---- |
 | filename | The unique filename of the image in the images folder. |
@@ -100,4 +100,4 @@ This is the master file that indexes your entire dataset.
 
 ## **License**
 
-This project is licensed under the MIT License \- see the LICENSE file for details.
+This project is licensed under the MIT License \- see the [LICENSE](./LICENSE) file for details.
