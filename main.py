@@ -1,5 +1,5 @@
 import os
-import pprint
+import csv
 
 from utils.loaders import load_config, load_corpus_words, get_asset_paths
 from utils.image_gen import generate_image
@@ -39,16 +39,17 @@ if __name__ == "__main__":
     os.makedirs(images_output_dir, exist_ok=True)
 
     labels_path = os.path.join(output_dir, 'labels.csv')
-    with open(labels_path, 'w', encoding='utf-8') as labels_file:
-        labels_file.write("filename,text\n")
-
     print("\nStarting generation...")
-    for i in range(num_to_generate):
-        filename, text = generate_image(i + 1, config, corpus_words, font_paths, background_paths)
-        
-        with open(labels_path, 'a', encoding='utf-8') as labels_file:
-            labels_file.write(f'"{filename}","{text}"\n')
+
+    with open(labels_path, 'w', newline='', encoding='utf-8') as labels_file:
+        # QUOTE_ALL ensures all fields are safely quoted.
+        writer = csv.writer(labels_file, quoting=csv.QUOTE_ALL)
+        writer.writerow(['filename', 'text'])
+
+        for i in range(num_to_generate):
+            filename, text = generate_image(i + 1, config, corpus_words, font_paths, background_paths)
+            writer.writerow([filename, text])
             
-        print(f"  > Generated image {i+1}/{num_to_generate}: {filename}")
+            print(f"  > Generated image {i+1}/{num_to_generate}: {filename}")
     
     print(f"\nGeneration complete! {num_to_generate} images and labels.csv created in '{output_dir}'.")
