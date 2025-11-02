@@ -1,11 +1,11 @@
 # **DART: Data Augmentation & Replication for Text**
 
-**DART** is a comprehensive, command-line tool designed to automate the creation of high-quality, synthetic datasets for training Optical Character Recognition (OCR) models. It transforms raw text from a corpus into a diverse, augmented, and ready-to-use dataset, significantly reducing the need for manual data collection and annotation.
+**DART** is a comprehensive, command-line tool designed to automate the creation of high-quality, synthetic datasets for training Optical Character Recognition (OCR) models. It transforms raw text from a corpus into a diverse, augmented and ready-to-use dataset, significantly reducing the need for manual data collection and annotation.
 
 ## **Key Features**
 
 * **Fully Configurable:** The **[config.yaml](./config.yaml)** file provides granular control over the entire generation pipeline.  
-* **Dynamic Background Sizing:** Crops or tiles backgrounds to perfectly match the text dimensions, preventing image distortion.  
+* **Dynamic Background Sizing:** Crops or tiles backgrounds to perfectly match the text dimensions and preventing image distortion.  
 * **Context-Aware Text Sampling:** Generates text snippets by selecting adjacent words from the corpus to maintain semantic context.  
 * **Rich Augmentation Pipeline:** Applies a chain of realistic, randomized augmentations to simulate real-world conditions:  
   * Perspective Warping  
@@ -13,7 +13,7 @@
   * Gaussian Blur  
   * Salt-and-Pepper Noise  
   * Brightness & Contrast Jitter  
-* **Customizable Text Rendering:** Easily control font types, font sizes, padding, and text colors with randomized ranges.  
+* **Customizable Text Rendering:** Easily control font types, font sizes, padding and text colors with randomized ranges.  
 
 ## Examples
 
@@ -62,7 +62,7 @@ Before running the script, you must populate the asset folders:
 python main.py
 ```
 
-The script will ask you to confirm the number of images to generate, and wait for your final confirmation before starting the process.
+The script will ask you to confirm the number of images to generate and wait for your final confirmation before starting the process.
 
 ## **Configuration**
 
@@ -96,7 +96,7 @@ output/
 | Column | Description |
 | :---- | :---- |
 | filename | The unique filename of the image in the images folder. |
-| text | The corresponding ground-truth text for that image. |
+| text | The corresponding ground truth text for that image. |
 
 ## **License**
 
